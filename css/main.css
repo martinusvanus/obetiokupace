@@ -1,0 +1,265 @@
+/*paleta*/
+.hlavni-barva {
+    color: #3A7D44
+}
+.pomocna-barva {
+    color: #69B578
+}
+.nadpisova-barva {
+    color: #23492F
+}
+.podklad {
+    color: #F0F7EE
+}
+
+
+@import url("https://use.typekit.net/zty1fwz.css");
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,800&display=swap');
+
+body {
+    padding: 0;
+    margin: 0;
+}
+html, body {
+    height: 100%;
+    width: 100vw;
+    font-family: brandon-grotesque, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#mapa {
+    height: 100%;
+    width: 100vw;
+    
+}
+
+h1 {
+    text-align: center;
+    font-family: brandon-grotesque, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    color: white;
+}
+
+.nadpis {
+    background-color: #F0F7EE;
+    margin: -10px -20px;
+    margin-bottom: 25px;
+    padding: 10px 20px;
+    padding-top: 20px;
+    padding-right: 40px;
+    text-align: center;
+}
+
+h3 {
+    font-family: brandon-grotesque, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-size: 20px
+}
+
+hr {
+    margin-top: 15px;
+    border: 0;
+    height: 1px;
+    background: #333;
+    background-image: linear-gradient(to right, #ccc, gray, #ccc);
+}
+
+button {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 13.5px !important;
+}
+
+input {
+    font-family: brandon-grotesque, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px
+}
+
+button {
+    background-color: #F0F7EE;
+    border: 2px solid #69B578;
+    color: black;
+    padding: 5px 8px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 13px;
+    outline: 0;
+    cursor: pointer;
+    margin-bottom: 5px;
+    border-radius: 3px;
+}
+
+button:focus {
+    background-color: #F0F7EE;
+    padding: 5px 8px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 13px;
+    outline: 0;
+    cursor: pointer;
+    margin-bottom: 5px;
+    border-radius: 3px;
+}
+
+button:hover {
+    background-color: #F0F7EE;
+    border: 2px solid #3A7D44;
+    color: black;
+    padding: 5px 8px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 13px;
+    outline: 0;
+    cursor: pointer;
+    margin-bottom: 5px;
+    border-radius: 3px;
+}
+
+.aktivni {
+    background-color: #3A7D44 !important;
+    border: 2px solid #3A7D44 !important;
+    color: white;
+}
+
+.aktivni:hover {
+    background-color: #69B578;
+    border: 2px solid #69B578;
+    color: white;
+}
+
+#reset, #reset:hover {
+    background-color: #3A7D44;
+    border: 2px solid #3A7D44;
+    color: white;
+    padding: 5px 8px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 13px;
+    outline: 0;
+    cursor: pointer;
+    margin-bottom: 5px;
+    border-radius: 3px;    
+}
+
+/*UI tlacitko*/
+.ui-state-default,
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default,
+.ui-button,
+html .ui-button.ui-state-disabled:hover,
+html .ui-button.ui-state-disabled:active {
+	border: 1.3px solid #3A7D44;
+	background: #F0F7EE;
+	font-weight: normal;
+    color: #454545;
+    outline: none;
+    cursor: grab;
+}
+
+/*UI tlacito aktivni*/
+.ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active,
+a.ui-button:active,
+.ui-button:active,
+.ui-button.ui-state-active:hover,
+.ui-state-hover,
+.ui-widget-content .ui-state-hover,
+.ui-widget-header .ui-state-hover,
+.ui-button:hover,
+.ui-button:focus {
+	border: 1,3px solid #3A7D44;
+	background: #3A7D44 !important;
+	font-weight: normal;
+	color: #454545;
+    outline: none;
+}
+
+/*UI linka vnitrni*/
+.ui-widget-header {
+	border: 0;
+	background: #3A7D44;
+	color: #333333;
+}
+
+/*UI linka vnejsi*/
+.ui-widget.ui-widget-content,
+.ui-widget-content {
+	border: 0;
+	background: #69B578;
+	color: #333333;
+}
+
+/*Sidebar*/
+.sidebar-tabs {
+    background-color: transparent;
+}
+
+.otevrene {
+    background-color: white;
+}
+
+.sidebar-content {
+    background-color: #F0F7EE;
+}
+
+.sidebar-tabs > li.active, .sidebar-tabs > ul > li.active, .sidebar-tabs > li.active:hover, .sidebar-tabs > ul > li.active:hover {
+    color: #fff;
+    background-color: #3A7D44;
+}
+
+.sidebar-tabs > li, .sidebar-tabs > ul > li {
+    color: #000;
+    background-color: white;
+}
+
+.sidebar-tabs > li:hover, .sidebar-tabs > ul > li:hover {
+    color: #000;
+    background-color: #69B578;
+}
+
+a {
+    color: black;
+}
+
+#info {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.leaflet-popup-content-wrapper, .leaflet-popup-content-wrapper .leaflet-popup-content, .leaflet-popup-tip-container {
+    font-family: 'Open Sans', sans-serif !important;
+    font-size: 12.5px
+}
+
+.jmenoobeti {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 800;
+    font-size: 19px;
+}
+
+#loga {
+    margin-bottom: 20px;
+}
+
+.fa-times {
+    position: absolute; 
+    right: 15px; 
+    font-size: 23px; 
+    color: #23492F; 
+    cursor: pointer
+}
+
+@media (min-width: 768px) {
+    .fa-times {
+        display: none;
+    }
+}

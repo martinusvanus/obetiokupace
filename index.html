@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-YV4E6L75JG"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-YV4E6L75JG');
+        </script>
+
+        <meta charset="UTF-8">
+        <title>Oběti okupace 1968</title>
+        <meta name="description" content="Mapa obětí okupace Československa vojsky Varšavské smlouvy.">
+        <meta name="author" content="Martin Váňa">
+        <link rel="icon" type="image/png" href="favicon.png" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <!--Leaflet-->
+        <link rel="stylesheet" href="css/leaflet.css">
+        <script src="js/leaflet.js"></script>
+
+        <!--Marker Cluster-->
+        <link rel="stylesheet" href="css/MarkerCluster.css">
+        <link rel="stylesheet" href="css/MarkerCluster.Default.css">
+        <script src="js/leaflet.markercluster.js"></script>
+
+        <!--defaultextent-->
+        <link rel="stylesheet" href="css/leaflet.defaultextent.css">
+        <script src="js/leaflet.defaultextent.js"></script>
+
+        <!--FontAwesome-->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.typekit.net/zty1fwz.css">
+
+        <!--Side bar-->
+        <link rel="stylesheet" href="css/leaflet-sidebar.css" />
+        <script src="js/leaflet-sidebar.js"></script>
+
+        <!--JQuery-->
+        <script src="js/jquery-3.4.1.min.js"></script>
+
+        <!--JQuery UI-->
+        <script src="js/jquery-ui.js"></script>
+        <link rel="stylesheet" href="css/jquery-ui.css">
+        <script src="js/jquery.ui.touch-punch.min.js"></script>
+
+        <script src="js/typeset.js"></script>
+        <link rel="stylesheet" href="css/znacky.css">
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+
+    <body>
+
+        <div id="sidebar" class="sidebar">
+            <!-- Nav tabs -->
+            <div class="sidebar-tabs otevrene">
+                <ul role="tablist">
+                    <li class="sidebartab active"><a href="#home" role="tab"><i class="fas fa-bars"></i></a></li>
+                    <li class="sidebartab"><a href="#info" role="tab"><i class="fa fa-info"></i></a></li>
+                </ul>
+    
+
+            </div>
+    
+            <!-- Tab panes -->
+            <div class="sidebar-content">
+                <div class="sidebar-pane active" id="home">
+                    <i class="fas fa-times"></i>
+                    <div class="nadpis"><img src="logo.svg" alt="Oběti okupace 1968"></div>
+                    
+                    <div style="padding-right: 10px">
+                        <h3>Pohlaví</h3>
+                        <button type="button" id="muzi" class="aktivni">Muži</button>
+                        <button type="button" id="zeny" class="aktivni">Ženy</button>
+        
+                        <hr>
+                        <h3>Národnost</h3>
+                        <button type="button" id="ceska" class="aktivni">Česká</button>
+                        <button type="button" id="slovenska" class="aktivni">Slovenská</button>
+                        <button type="button" id="madarska" class="aktivni">Maďarská</button>
+                        <button type="button" id="neurcenanarodnost" class="aktivni">Neurčená</button>
+        
+                        <hr>
+                        <h3>Věk</h3>
+                        <div id="slider-vek"></div>
+                        <p>
+                            <input type="text" id="vekOd" readonly style="width: 65px; text-align: center; float: left">
+                            <input type="text" id="vekDo" readonly style="width: 65px; text-align: center; float: right">
+                        </p>
+                        
+                        <hr style="margin-top:61px">
+                        <h3>Způsob usmrcení</h3>
+                        <button type="button" id="nehoda" class="aktivni">Dopravní nehoda</button>
+                        <button type="button" id="zastreleni" class="aktivni">Zastřelení</button>
+                        <button type="button" id="jinyzpusob" class="aktivni">Jiný</button>
+        
+                        <hr>
+                        <h3>Okolnost usmrcení</h3>
+                        <button type="button" id="protest" class="aktivni">Protest</button>
+                        <button type="button" id="nahoda" class="aktivni">Náhoda</button>
+                        <button type="button" id="neurcenaokolnost" class="aktivni">Neurčeno</button>
+
+                        <hr>
+                        <h3>Datum incidentu</h3>
+                        <div id="slider-datum"></div>
+                        <p>
+                            <input type="text" id="datumOd" readonly style="width: 100px; text-align: center; float: left">
+                            <input type="text" id="datumDo" readonly style="width: 100px; text-align: center; float: right;">
+                        </p>
+                        
+                        <hr style="margin-top:61px">
+                        <div id="pocet-obeti"></div>
+        
+                        <button type="button" id="reset"><i class="fa fa-redo" style="margin-right:10px"></i>Resetovat filtry</button>        
+                    </div>
+                </div>
+
+                <div class="sidebar-pane" id="info">
+                    <i class="fas fa-times"></i>
+                    <div class="nadpis"><img src="logo.svg" alt="Oběti okupace 1968"></div>
+                    
+                    <div style="padding-right: 10px">
+                        <p style="margin-top: 5px">Mapa poskytuje interaktivní přehled obětí usmrcených v&nbsp;období od&nbsp;21.&nbsp;srpna 1968 do&nbsp;20.&nbsp;srpna 1969 okupačními vojsky Varšavské smlouvy na&nbsp;území Československa. Detailní formou informuje o&nbsp;místě, času a&nbsp;příčinách úmrtí zabitých. V&nbsp;mapě lze pomocí filtrů&nbsp;dle badatelského zájmu vyhledávat (národnost, věk, okolnost usmrcení obětí ad.) nebo sledovat podle dat úmrtí pohyb okupačních vojsk.</p>
+                        <p>Interaktivní mapa vznikla díky původním výzkumům Milana Bárty a&nbsp;kolektivu Ústavu pro&nbsp;studium totalitních režimů a&nbsp;historiků Prokopa Tomka a&nbsp;Ivo Pejčocha z&nbsp;Vojenského historického ústavu. Výsledky jejich výzkumů najdete např. v&nbsp;těchto publikacích: <a href="https://www.ustrcr.cz/publikace/36549/">Oběti okupace: Československo 21.&nbsp;srpen - 31.&nbsp;prosinec 1968</a> a&nbsp;<a href="http://www.vhu.cz/vhu-vydava-knihu-s-novymi-poznatky-o-okupaci-1968-a-jejich-obetech/">Okupace 1968 a&nbsp;její oběti: Nové pohledy na&nbsp;invazi armád varšavské smlouvy do&nbsp;Československa roku 1968, počátek okupace a&nbsp;její oběti</a>.</p>
+                        <p>Mapa byla vytvořena na&nbsp;základě spolupráce zmíněných badatelů s&nbsp;Oddělením vzdělávání Ústavu pro&nbsp;studium totalitních režimů. V&nbsp;rámci projektu <a href="http://dejepis21.cz">Dějepis 21</a> ji předkládáme k&nbsp;edukativním účelům a&nbsp;všem zájemcům o&nbsp;problematiku okupace. Obdobný způsob zpracování výzkumných dat nabízíme prostřednictvím <a href="https://mapa.zelezna-opona.cz/">mapy usmrcených na&nbsp;hranici v&nbsp;období komunistického režimu</a>. </p>
+                        <p>Prokopovi Tomkovi a&nbsp;zesnulému Ivovi Pejčochovi z&nbsp;Vojenského historického ústavu děkujeme za&nbsp;spolupráci.</p>
+                        <p><strong>Jak mapu ovládat?</strong></p>
+                        <p>Body na&nbsp;mapě zobrazují místa, na&nbsp;nichž došlo k&nbsp;incidentu mezi příslušníky okupačních vojsk a&nbsp;usmrcenou osobou. Kliknutím na&nbsp;bod se&nbsp;zobrazí okno s&nbsp;fotografií oběti (je-li k&nbsp;dispozici), jejím jménem, zaměstnáním (dle <a href="https://www.czso.cz/csu/czso/klasifikace_zamestnani_-cz_isco-">statistické klasifikace zaměstnání ČSÚ</a>), věkem v&nbsp;době incidentu, datem a&nbsp;popisem tohoto incidentu. Body s&nbsp;číslem v&nbsp;mapě označují místo, na&nbsp;němž došlo k&nbsp;incidentu s&nbsp;více oběťmi. Kliknutím na&nbsp;takový bod se&nbsp;mapa nejdříve přiblíží na&nbsp;místo incidentu. Následné kliknutí Vám nabídne možnost zobrazit informace o&nbsp;konkrétních osobách, které&nbsp;na&nbsp;tomto místě zahynuly. </p>
+                        <p>V menu v&nbsp;levé části obrazovky se&nbsp;nachází ovládání filtrů. Pomocí tlačítek lze filtrovat body zobrazené v&nbsp;mapě. Tmavě zelená barva tlačítka značí, že&nbsp;je&nbsp;filtr aktivován. Pomocí táhel lze určit rozsah věku obětí zobrazených v&nbsp;mapě nebo období, v&nbsp;němž došlo k&nbsp;incidentu. Celé menu lze pro&nbsp;pohodlnější prohlížení mapy (zvláště na&nbsp;mobilních zařízeních) skrýt.</p>
+                    </div>
+                    <div id="loga">
+                        <a href="http://dejepis21.cz"><img src="d21.png" style="max-height:35px; margin-right:10px; margin-top:10px"></a>
+                        <a href="https://www.ustrcr.cz/"><img src="ustr.png" style="max-height:34px; margin-top:11px"></a>
+                    </div>
+
+                </div>
+    
+            </div>
+        </div>
+
+        <div id="mapa"></div>
+
+        <script src="js/data6.js"></script>
+        <script src="js/kalendar.js"></script>
+        <script src="js/main1.js"></script>
+
+    </body>
+</html>

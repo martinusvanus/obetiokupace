@@ -1,0 +1,37 @@
+/*znacky klasteru*/
+.marker-cluster-small {
+	background-color: rgba(181, 226, 140, 0.6);
+}
+.marker-cluster-small div {
+	background-color: rgba(110, 204, 57, 0.6);
+}
+
+.leaflet-popup-content {
+    font-family: 'Merriweather', serif;
+    font-weight: 400;
+}
+
+.marker-cluster div {
+    width: 23px;
+    height: 23px;
+}
+
+.marker-cluster-small {
+    background-color: transparent;
+}
+
+.marker-cluster-small div {
+    background-color: #69B578;
+    border: 1.5px solid #23492F;
+    color: whitesmoke
+}
+
+@-moz-document url-prefix() {
+    .marker-cluster-small div {
+        border: 2px solid #23492F;
+    }
+}
+
+.marker-cluster span {
+    line-height: 22px;
+}
