@@ -1,17 +1,10 @@
 /*paleta*/
-.hlavni-barva {
-    color: #3A7D44
+:root {
+    --color-hlavni: #3A7D44;
+    --color-pomocna: #69B578;
+    --color-nadpisova: #23492F;
+    --color-podklad: #F0F7EE;
 }
-.pomocna-barva {
-    color: #69B578
-}
-.nadpisova-barva {
-    color: #23492F
-}
-.podklad {
-    color: #F0F7EE
-}
-
 
 @import url("https://use.typekit.net/zty1fwz.css");
 
@@ -44,7 +37,7 @@ h1 {
 }
 
 .nadpis {
-    background-color: #F0F7EE;
+    background-color: var(--color-podklad);
     margin: -10px -20px;
     margin-bottom: 25px;
     padding: 10px 20px;
@@ -85,8 +78,8 @@ input {
 }
 
 button {
-    background-color: #F0F7EE;
-    border: 2px solid #69B578;
+    background-color: var(--color-podklad);
+    border: 2px solid var(--color-pomocna);
     color: black;
     padding: 5px 8px;
     text-align: center;
@@ -99,7 +92,7 @@ button {
 }
 
 button:focus {
-    background-color: #F0F7EE;
+    background-color: var(--color-podklad);
     padding: 5px 8px;
     text-align: center;
     text-decoration: none;
@@ -111,8 +104,8 @@ button:focus {
 }
 
 button:hover {
-    background-color: #F0F7EE;
-    border: 2px solid #3A7D44;
+    background-color: var(--color-podklad);
+    border: 2px solid var(--color-hlavni);
     color: black;
     padding: 5px 8px;
     text-align: center;
@@ -125,20 +118,20 @@ button:hover {
 }
 
 .aktivni {
-    background-color: #3A7D44 !important;
-    border: 2px solid #3A7D44 !important;
+    background-color: var(--color-hlavni) !important;
+    border: 2px solid var(--color-hlavni) !important;
     color: white;
 }
 
 .aktivni:hover {
-    background-color: #69B578;
-    border: 2px solid #69B578;
+    background-color: var(--color-pomocna);
+    border: 2px solid var(--color-pomocna);
     color: white;
 }
 
 #reset, #reset:hover {
-    background-color: #3A7D44;
-    border: 2px solid #3A7D44;
+    background-color: var(--color-hlavni);
+    border: 2px solid var(--color-hlavni);
     color: white;
     padding: 5px 8px;
     text-align: center;
@@ -157,8 +150,8 @@ button:hover {
 .ui-button,
 html .ui-button.ui-state-disabled:hover,
 html .ui-button.ui-state-disabled:active {
-	border: 1.3px solid #3A7D44;
-	background: #F0F7EE;
+	border: 1.3px solid var(--color-hlavni);
+	background: var(--color-podklad);
 	font-weight: normal;
     color: #454545;
     outline: none;
@@ -177,8 +170,8 @@ a.ui-button:active,
 .ui-widget-header .ui-state-hover,
 .ui-button:hover,
 .ui-button:focus {
-	border: 1,3px solid #3A7D44;
-	background: #3A7D44 !important;
+	border: 1,3px solid var(--color-hlavni);
+	background: var(--color-hlavni) !important;
 	font-weight: normal;
 	color: #454545;
     outline: none;
@@ -187,7 +180,7 @@ a.ui-button:active,
 /*UI linka vnitrni*/
 .ui-widget-header {
 	border: 0;
-	background: #3A7D44;
+	background: var(--color-hlavni);
 	color: #333333;
 }
 
@@ -195,7 +188,7 @@ a.ui-button:active,
 .ui-widget.ui-widget-content,
 .ui-widget-content {
 	border: 0;
-	background: #69B578;
+	background: var(--color-pomocna);
 	color: #333333;
 }
 
@@ -209,12 +202,12 @@ a.ui-button:active,
 }
 
 .sidebar-content {
-    background-color: #F0F7EE;
+    background-color: var(--color-podklad);
 }
 
 .sidebar-tabs > li.active, .sidebar-tabs > ul > li.active, .sidebar-tabs > li.active:hover, .sidebar-tabs > ul > li.active:hover {
     color: #fff;
-    background-color: #3A7D44;
+    background-color: var(--color-hlavni);
 }
 
 .sidebar-tabs > li, .sidebar-tabs > ul > li {
@@ -224,7 +217,7 @@ a.ui-button:active,
 
 .sidebar-tabs > li:hover, .sidebar-tabs > ul > li:hover {
     color: #000;
-    background-color: #69B578;
+    background-color: var(--color-pomocna);
 }
 
 a {
@@ -254,7 +247,7 @@ a {
     position: absolute; 
     right: 15px; 
     font-size: 23px; 
-    color: #23492F; 
+    color: var(--color-nadpisova); 
     cursor: pointer
 }
 
